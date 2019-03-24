@@ -15,25 +15,29 @@ const (
 
 // Body .
 func Body(identifiers []string, content interface{}) {
-	constructLogText(BODY, identifiers, content)
+	logText := constructLogText(BODY, identifiers, content)
+	log.Println(logText)
 }
 
 // Close .
 func Close(identifiers []string, content interface{}) {
-	constructLogText(CLOSE, identifiers, content)
+	logText := constructLogText(CLOSE, identifiers, content)
+	log.Println(logText)
 }
 
 // Info .
 func Info(identifiers []string, content interface{}) {
-	constructLogText(INFO, identifiers, content)
+	logText := constructLogText(INFO, identifiers, content)
+	log.Println(logText)
 }
 
 // Open .
 func Open(identifiers []string, content interface{}) {
-	constructLogText(OPEN, identifiers, content)
+	logText := constructLogText(OPEN, identifiers, content)
+	log.Println(logText)
 }
 
-func constructLogText(logType string, identifiers []string, content interface{}) {
+func constructLogText(logType string, identifiers []string, content interface{}) string {
 	logText := logType
 
 	for _, identifier := range identifiers {
@@ -44,5 +48,5 @@ func constructLogText(logType string, identifiers []string, content interface{})
 		logText += fmt.Sprintf(" %v", content)
 	}
 
-	log.Println(logText)
+	return logText
 }
