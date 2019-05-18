@@ -9,6 +9,7 @@ import (
 const (
 	BODY  = "BODY"
 	CLOSE = "CLSE"
+	ERROR = "ERRR"
 	FATAL = "FATL"
 	INFO  = "INFO"
 	OPEN  = "OPEN"
@@ -23,6 +24,12 @@ func Body(identifiers []string, content interface{}) {
 // Close .
 func Close(identifiers []string, content interface{}) {
 	logText := constructLogText(CLOSE, identifiers, content)
+	log.Println(logText)
+}
+
+// Error .
+func Error(identifiers []string, content interface{}) {
+	logText := constructLogText(ERROR, identifiers, content)
 	log.Println(logText)
 }
 
