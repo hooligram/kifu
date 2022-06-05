@@ -12,36 +12,18 @@ const (
 	WARN  = "WARN"
 )
 
-func Info(identifiers []string, content interface{}) {
-	logText := constructLogText(INFO, identifiers, content)
-	log.Println(logText)
+func Info(format string, a ...any) {
+	log.Printf("%v %v\n", INFO, fmt.Sprintf(format, a...))
 }
 
-func Warn(identifiers []string, content interface{}) {
-	logText := constructLogText(INFO, identifiers, content)
-	log.Println(logText)
+func Warn(format string, a ...any) {
+	log.Printf("%v %v\n", WARN, fmt.Sprintf(format, a...))
 }
 
-func Error(identifiers []string, content interface{}) {
-	logText := constructLogText(ERROR, identifiers, content)
-	log.Println(logText)
+func Error(format string, a ...any) {
+	log.Printf("%v %v\n", ERROR, fmt.Sprintf(format, a...))
 }
 
-func Fatal(identifiers []string, content interface{}) {
-	logText := constructLogText(FATAL, identifiers, content)
-	log.Fatalln(logText)
-}
-
-func constructLogText(logType string, identifiers []string, content interface{}) string {
-	logText := logType
-
-	for _, identifier := range identifiers {
-		logText += fmt.Sprintf(" [%v]", identifier)
-	}
-
-	if content != nil {
-		logText += fmt.Sprintf(" %v", content)
-	}
-
-	return logText
+func Fatal(format string, a ...any) {
+	log.Fatalf("%v %v\n", FATAL, fmt.Sprintf(format, a...))
 }
