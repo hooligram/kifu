@@ -5,50 +5,31 @@ import (
 	"log"
 )
 
-// Tags to more easily identify log types.
 const (
-	BODY  = "BODY"
-	CLOSE = "CLSE"
 	ERROR = "ERRR"
 	FATAL = "FATL"
 	INFO  = "INFO"
-	OPEN  = "OPEN"
+	WARN  = "WARN"
 )
 
-// Body .
-func Body(identifiers []string, content interface{}) {
-	logText := constructLogText(BODY, identifiers, content)
-	log.Println(logText)
-}
-
-// Close .
-func Close(identifiers []string, content interface{}) {
-	logText := constructLogText(CLOSE, identifiers, content)
-	log.Println(logText)
-}
-
-// Error .
-func Error(identifiers []string, content interface{}) {
-	logText := constructLogText(ERROR, identifiers, content)
-	log.Println(logText)
-}
-
-// Fatal .
-func Fatal(identifiers []string, content interface{}) {
-	logText := constructLogText(FATAL, identifiers, content)
-	log.Fatalln(logText)
-}
-
-// Info .
 func Info(identifiers []string, content interface{}) {
 	logText := constructLogText(INFO, identifiers, content)
 	log.Println(logText)
 }
 
-// Open .
-func Open(identifiers []string, content interface{}) {
-	logText := constructLogText(OPEN, identifiers, content)
+func Warn(identifiers []string, content interface{}) {
+	logText := constructLogText(INFO, identifiers, content)
 	log.Println(logText)
+}
+
+func Error(identifiers []string, content interface{}) {
+	logText := constructLogText(ERROR, identifiers, content)
+	log.Println(logText)
+}
+
+func Fatal(identifiers []string, content interface{}) {
+	logText := constructLogText(FATAL, identifiers, content)
+	log.Fatalln(logText)
 }
 
 func constructLogText(logType string, identifiers []string, content interface{}) string {
