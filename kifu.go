@@ -9,11 +9,11 @@ func Info(format string, a ...any) {
 }
 
 func Warn(format string, a ...any) {
-	fmt.Printf("(；⌣̀_⌣́) · %v\n", fmt.Sprintf(format, a...))
+	fmt.Printf("╮(︶︿︶)╭ · %v\n", fmt.Sprintf(format, a...))
 }
 
 func Error(format string, a ...any) {
-	fmt.Printf("(╬ Ò﹏Ó) · %v\n", fmt.Sprintf(format, a...))
+	fmt.Printf("(〃＞＿＜;〃) · %v\n", fmt.Sprintf(format, a...))
 }
 
 func Fatal(format string, a ...any) {
