@@ -18,8 +18,3 @@ func ExampleError() {
 	kifu.Error("%v", "Facebook")
 	// Output: (╬ Ò﹏Ó) · Facebook
 }
-
-func ExampleFatal() {
-	kifu.Fatal("%v", "Amazon")
-	// Output: 凸(￣ヘ￣) · Amazon
-}

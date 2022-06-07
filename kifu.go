@@ -3,7 +3,6 @@ package kifu
 import (
 	"fmt"
 	"os"
-	"strings"
 )
 
 func Info(format string, a ...any) {
@@ -20,8 +19,5 @@ func Error(format string, a ...any) {
 
 func Fatal(format string, a ...any) {
 	fmt.Printf("凸(￣ヘ￣) · %v\n", fmt.Sprintf(format, a...))
-	if strings.HasSuffix(os.Args[0], "test") {
-		return
-	}
 	os.Exit(1)
 }
