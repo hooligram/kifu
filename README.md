@@ -1,7 +1,7 @@
 # Kifu
 
 ![go](https://github.com/hooligram/kifu/actions/workflows/go.yml/badge.svg)
-[![codecov](https://codecov.io/gh/hooligram/kifu/branch/master/graph/badge.svg?token=z19KVQBlgx)](https://codecov.io/gh/hooligram/kifu)
+![codecov](https://codecov.io/gh/hooligram/kifu/branch/master/graph/badge.svg?token=z19KVQBlgx)
 
 ![mascot](https://github.com/hooligram/kifu/blob/master/heidi.jpeg)
 
