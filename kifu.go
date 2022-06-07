@@ -2,7 +2,6 @@ package kifu
 
 import (
 	"fmt"
-	"os"
 )
 
 func Info(format string, a ...any) {
@@ -18,6 +17,7 @@ func Error(format string, a ...any) {
 }
 
 func Fatal(format string, a ...any) {
-	fmt.Printf("凸(￣ヘ￣) · %v\n", fmt.Sprintf(format, a...))
-	os.Exit(1)
+	msg := fmt.Sprintf("(ｏ・_・)ノ”(ノ_<、) · %v\n", fmt.Sprintf(format, a...))
+	fmt.Print(msg)
+	panic(msg)
 }
