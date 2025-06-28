@@ -2,22 +2,21 @@ package kifu
 
 import (
 	"fmt"
+	"log"
 )
 
 func Info(format string, a ...any) {
-	fmt.Printf("٩(｡•́‿•̀｡)۶ · %v\n", fmt.Sprintf(format, a...))
+	log.Printf("INFO · %v", fmt.Sprintf(format, a...))
 }
 
 func Warn(format string, a ...any) {
-	fmt.Printf("╮(︶︿︶)╭ · %v\n", fmt.Sprintf(format, a...))
+	log.Printf("WARN · %v", fmt.Sprintf(format, a...))
 }
 
 func Error(format string, a ...any) {
-	fmt.Printf("(〃＞＿＜;〃) · %v\n", fmt.Sprintf(format, a...))
+	log.Printf("ERRO · %v", fmt.Sprintf(format, a...))
 }
 
 func Fatal(format string, a ...any) {
-	msg := fmt.Sprintf("(ｏ・_・)ノ”(ノ_<、) · %v\n", fmt.Sprintf(format, a...))
-	fmt.Print(msg)
-	panic(msg)
+	log.Fatalf("FATL · %v\n", fmt.Sprintf(format, a...))
 }
